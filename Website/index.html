@@ -1134,7 +1134,40 @@
 		     
         <!--Custom JS-->
         <script src="assets/js/custom.js"></script>
-        
+
+
+<script>
+    // JavaScript for calculator
+    function appendToDisplay(value) {
+        document.getElementById('display').value += value;
+    }
+
+    function clearDisplay() {
+        document.getElementById('display').value = '';
+    }
+
+    function calculate() {
+        var expression = document.getElementById('display').value;
+        var result = eval(expression);
+        document.getElementById('display').value = result;
+    }
+
+    // JavaScript for time
+    function updateTime() {
+        var now = new Date();
+        var hours = now.getHours();
+        var minutes = now.getMinutes();
+        var seconds = now.getSeconds();
+        document.getElementById('time').innerHTML = 'Current Time: ' + hours + ':' + minutes + ':' + seconds;
+    }
+
+    // Update time every second
+    setInterval(updateTime, 1000);
+
+    // Call updateTime initially to show the time immediately
+    updateTime();
+</script>
+		
     </body>
 	
 </html>
